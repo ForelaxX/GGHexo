@@ -29,13 +29,13 @@ deploy:
     local-dir: public
     keep-history: true
     on:
-      branch: stage
-  - provider: pages
-    skip-cleanup: true
-    github-token: $CI_USER_TOKEN
-    repo: SwiftGG/SwiftGGTeam.github.io
-    target-branch: master
-    local-dir: public
-    keep-history: true
-    on:
-      branch: master
+      all_branches: true
+  # - provider: pages
+  #   skip-cleanup: true
+  #   github-token: $CI_USER_TOKEN
+  #   repo: SwiftGG/SwiftGGTeam.github.io
+  #   target-branch: master
+  #   local-dir: public
+  #   keep-history: true
+  #   on:
+  #     branch: master
