@@ -30,12 +30,14 @@ deploy:
     keep-history: true
     on:
       all_branches: true
-  # - provider: pages
-  #   skip-cleanup: true
-  #   github-token: $CI_USER_TOKEN
-  #   repo: SwiftGG/SwiftGGTeam.github.io
-  #   target-branch: master
-  #   local-dir: public
-  #   keep-history: true
-  #   on:
-  #     branch: master
+      condition: $TRAVIS_BRANCH =~ ^stage$
+  - provider: pages
+    skip-cleanup: true
+    github-token: $CI_USER_TOKEN
+    repo: SwiftGG/SwiftGGTeam.github.io
+    target-branch: master
+    local-dir: public
+    keep-history: true
+    on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH =~ ^master$
