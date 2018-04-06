@@ -25,7 +25,9 @@ deploy:
   local-dir: public
   keep-history: true
   on:
-    branch: stage
+    branches:
+      only:
+         - stage
 deploy:
   provider: pages
   skip-cleanup: true
@@ -35,4 +37,6 @@ deploy:
   local-dir: public
   keep-history: true
   on:
-    branch: master
+    branches:
+      only:
+        - master
