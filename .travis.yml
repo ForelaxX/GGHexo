@@ -29,9 +29,7 @@ deploy:
     local-dir: public
     keep-history: true
     on:
-      branches:
-        only:
-          - stage
+      branch: stage
   - provider: pages
     skip-cleanup: true
     github-token: $CI_USER_TOKEN
@@ -40,6 +38,4 @@ deploy:
     local-dir: public
     keep-history: true
     on:
-      branches:
-        only:
-          - master
+      branch: master
