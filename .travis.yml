@@ -16,29 +16,30 @@ before_script:
   - yarn install
 cache:
   yarn: true
+  directories:
+    - node_modules
 script:
   - ./preDeploy.sh
 deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $CI_USER_TOKEN
-  repo: SwiftGGSite/SwiftGGSite.github.io
-  target-branch: master
-  local-dir: public
-  keep-history: true
-  on:
-    branches:
-      only:
-         - stage
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $CI_USER_TOKEN
-  repo: SwiftGG/SwiftGGTeam.github.io
-  target-branch: master
-  local-dir: public
-  keep-history: true
-  on:
-    branches:
-      only:
-        - master
+  - provider: pages
+    skip-cleanup: true
+    github-token: $CI_USER_TOKEN
+    repo: SwiftGGSite/SwiftGGSite.github.io
+    target-branch: master
+    local-dir: public
+    keep-history: true
+    on:
+      branches:
+        only:
+          - stage
+  - provider: pages
+    skip-cleanup: true
+    github-token: $CI_USER_TOKEN
+    repo: SwiftGG/SwiftGGTeam.github.io
+    target-branch: master
+    local-dir: public
+    keep-history: true
+    on:
+      branches:
+        only:
+          - master
